@@ -56,3 +56,15 @@ let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${api
 
 console.log(apiUrl);
 axios.get(apiUrl).then(displayTemperature);
+
+function setBackgroundImage(){
+  var currentHour = new Date().getHours();
+  var bodyElement = document.getElementsByTagName('body')[0];
+
+  if (currentHour < 18) {
+    bodyElement.classList.add('day');
+  } else {
+    bodyElement.classList.add('night');
+  }
+}
+window.addEventListener('load', setBackgroundImage)
