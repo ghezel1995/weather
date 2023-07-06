@@ -1,7 +1,6 @@
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: white !important;
-  background: url(../images/sky.jpg);
+  color: #8c8c8c;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -19,6 +18,7 @@ li {
   list-style: none;
   padding: 0;
   margin: 0;
+  text-transform: capitalize;
 }
 a {
   text-decoration: none;
@@ -38,7 +38,7 @@ a {
 }
 .weather-app {
   width: 100%;
-  border: 3px solid white;
+  border: 1px solid #8c8c8c;
   border-radius: 10px;
 
   padding: 20px;

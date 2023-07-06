@@ -10,6 +10,7 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -17,10 +18,10 @@
       <div class="main">
         <div class="weather-app">
           <div class="overview">
-            <h1>New York</h1>
+            <h1 id="city"></h1>
             <ul>
-              <li>Thursday 11:22</li>
-              <li>Clear</li>
+              <li id="date">Thursday 11:22</li>
+              <li id="description"></li>
             </ul>
           </div>
           <div class="row">
@@ -29,20 +30,21 @@
                 class="w-25"
                 src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
                 alt="Clear"
-              /> <span class="temp">12 </span> <span class="celsiusFahrenheit">°C | <a href="#">°F</a></span>
+              />
+              <span id="temperature" class="temp"></span>
+              <span class="celsiusFahrenheit">°C | <a href="#">°F</a></span>
             </div>
             <div class="col-6">
               <ul>
-                <li>Precipitation: 3%</li>
-                <li>Humidity: 92%</li>
-                <li>Wind: 5 km/h</li>
+                <li>Humidity: <span id="humidity"></span> %</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
           </div>
         </div>
         <small>
-          <a href="https://github.com/ghezel1995/weather">Open-source code</a> by
-          Mahsa Ghezel
+          <a href="https://github.com/ghezel1995/weather">Open-source code</a>
+          by Mahsa Ghezel
         </small>
       </div>
     </div>
