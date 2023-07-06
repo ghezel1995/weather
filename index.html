@@ -4,42 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="src/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>New York</h1>
-        <ul>
-          <li>Thursday 11:22</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              class="w-25"
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="Clear"
-            />12 °C | °F
-          </div>
-          <div class="col-6">
+      <div class="main">
+        <div class="weather-app">
+          <div class="overview">
+            <h1>New York</h1>
             <ul>
-              <li>Precipitation: 3%</li>
-              <li>Humidity: 92%</li>
-              <li>Wind: 5 km/h</li>
+              <li>Thursday 11:22</li>
+              <li>Clear</li>
             </ul>
           </div>
+          <div class="row">
+            <div class="col-6 main-temp">
+              <img
+                class="w-25"
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt="Clear"
+              /> <span class="temp">12 </span> <span class="celsiusFahrenheit">°C | <a href="#">°F</a></span>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Precipitation: 3%</li>
+                <li>Humidity: 92%</li>
+                <li>Wind: 5 km/h</li>
+              </ul>
+            </div>
+          </div>
         </div>
+        <small>
+          <a href="https://github.com/ghezel1995/weather">Open-source code</a> by
+          Mahsa Ghezel
+        </small>
       </div>
-      <small>
-        <a href="https://github.com/ghezel1995/weather">Open-source code</a>by
-        Mahsa Ghezel
-      </small>
     </div>
     <script src="src/app.js"></script>
     <script
