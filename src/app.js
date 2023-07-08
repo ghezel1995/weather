@@ -49,15 +49,25 @@ function displayTemperature(response) {
   );
   iconElement.setAttribute('alt', response.data.condition.description);
 }
+function search(city) {
+  let apiKey = '6b27a083f4447ft3fa5232f2oed26a80';
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-let apiKey = '6b27a083f4447ft3fa5232f2oed26a80';
-let city = 'London';
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
 
-function setBackgroundImage(){
+  let cityInputElement = document.querySelector('#city-input');
+  search(cityInputElement.value);
+}
+search('New York');
+
+let form = document.querySelector('#search-form');
+form.addEventListener('submit', handleSubmit);
+
+function setBackgroundImage() {
   var currentHour = new Date().getHours();
   var bodyElement = document.getElementsByTagName('body')[0];
 
@@ -67,4 +77,4 @@ function setBackgroundImage(){
     bodyElement.classList.add('night');
   }
 }
-window.addEventListener('load', setBackgroundImage)
+window.addEventListener('load', setBackgroundImage);
