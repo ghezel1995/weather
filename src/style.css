@@ -67,3 +67,10 @@ a {
 .temp {
   font-size: 64px;
 }
+.main-temp .active{
+  color: #fff;
+  cursor: default;
+}
+.main-temp .active:hover{
+  text-decoration: none;
+}
