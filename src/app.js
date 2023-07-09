@@ -23,7 +23,7 @@ function formattedDate(timestamp) {
 
 function formatForecastDays(time) {
   let date = new Date(time * 1000);
-  let days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat'];
+  let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   let day = days[date.getDay()];
 
   return day;
@@ -31,7 +31,6 @@ function formatForecastDays(time) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(forecast);
   let forecastElement = document.querySelector('#forecast');
 
   let forecastHTML = `<div class="row">`;
@@ -65,17 +64,13 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinate) {
-  console.log(coordinate);
   let apiKey = '6b27a083f4447ft3fa5232f2oed26a80';
   let apiUrlForecast = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinate.latitude}&lon=${coordinate.longitude}&key=6b27a083f4447ft3fa5232f2oed26a80&units=metric`;
-  console.log(apiUrlForecast);
 
   axios.get(apiUrlForecast).then(displayForecast);
 }
 
 function displayTemperature(response) {
-  console.log(response.data);
-
   celsiusTemperature = response.data.temperature.current;
 
   let temperatureElement = document.querySelector('#temperature');
@@ -134,29 +129,3 @@ function setBackgroundImage() {
   }
 }
 window.addEventListener('load', setBackgroundImage);
-
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  celsiusLink.classList.remove('active');
-  fahrenheitLink.classList.add('active');
-  fahrenheitTemperature = Math.round(fahrenheitTemperature);
-  let temperature = document.querySelector('#temperature');
-  temperature.innerHTML = fahrenheitTemperature;
-}
-
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperature = document.querySelector('#temperature');
-  fahrenheitLink.classList.remove('active');
-  celsiusLink.classList.add('active');
-  temperature.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector('#fahrenheit-link');
-fahrenheitLink.addEventListener('click', showFahrenheitTemperature);
-
-let celsiusLink = document.querySelector('#celsius-link');
-celsiusLink.addEventListener('click', showCelsiusTemperature);
