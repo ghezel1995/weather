@@ -21,6 +21,34 @@ function formattedDate(timestamp) {
   return `${day}, ${hour}:${minutes} `;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector('#forecast');
+
+  let forecastHTML = `<div class="row">`;
+  let days = ['Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed'];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2 forecast-card">
+                <div class="forecast-date">${day}</div>
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/mist-day.png"
+                  alt=""
+                  class="forecast-img"
+                />
+                <div class="forecast-temperature">
+                  <span id="forecast-max">18°</span>
+                  <span id="forecast-min">  12°</span>
+                </div>
+              </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   console.log(response.data);
 
@@ -98,6 +126,8 @@ function showCelsiusTemperature(event) {
   celsiusLink.classList.add('active');
   temperature.innerHTML = Math.round(celsiusTemperature);
 }
+
+displayForecast();
 
 let celsiusTemperature = null;
 
