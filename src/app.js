@@ -21,31 +21,45 @@ function formattedDate(timestamp) {
   return `${day}, ${hour}:${minutes} `;
 }
 
+function formatForecastDays(time) {
+  let date = new Date(time * 1000);
+  let days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat'];
+  let day = days[date.getDay()];
+
+  return day;
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily)
+  let forecast = response.data.daily;
+  console.log(forecast);
   let forecastElement = document.querySelector('#forecast');
 
   let forecastHTML = `<div class="row">`;
-  let days = ['Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed'];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML += `
               <div class="col-2 forecast-card">
-                <div class="forecast-date">${day}</div>
+                <div class="forecast-date">${formatForecastDays(
+                  forecastDay.time
+                )}</div>
                 <img
-                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/mist-day.png"
+                  src=${forecastDay.condition.icon_url}
                   alt=""
                   class="forecast-img"
                 />
                 <div class="forecast-temperature">
-                  <span id="forecast-max">18°</span>
-                  <span id="forecast-min">  12°</span>
+                  <span id="forecast-max">${Math.round(
+                    forecastDay.temperature.maximum
+                  )}°</span>
+                  <span id="forecast-min">  ${Math.round(
+                    forecastDay.temperature.minimum
+                  )}°</span>
                 </div>
               </div>
   `;
+    }
   });
-  forecastHTML = forecastHTML + `</div>`;
+  forecastHTML += `</div>`;
 
   forecastElement.innerHTML = forecastHTML;
 }
@@ -138,7 +152,6 @@ function showCelsiusTemperature(event) {
   celsiusLink.classList.add('active');
   temperature.innerHTML = Math.round(celsiusTemperature);
 }
-
 
 let celsiusTemperature = null;
 
