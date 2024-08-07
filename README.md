@@ -27,7 +27,7 @@ To run this project locally, follow these steps:
 2. **Navigate to the Project Directory**:
 
     ```bash
-    cd online-weather-app
+    cd weather-vanilla
     ```
 
 3. **Open `index.html` in Your Browser**:
