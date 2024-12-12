@@ -14,7 +14,7 @@ This project is a simple yet effective weather application built with vanilla Ja
 
 ## Live Demo
 
-You can test the application online by clicking [this link] (https://weatherwithvanillajs.netlify.app/).
+You can test the application online by clicking [this link](https://weatherwithvanillajs.netlify.app/).
 
 ## Installation
 
