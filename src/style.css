@@ -1,7 +1,11 @@
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: #fff;
-  
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .day {
   background: url('../images/sky.jpg');
@@ -43,18 +47,21 @@ a {
 }
 
 .main {
-  max-width: 700px;
-  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .weather-app {
-  width: 100%;
+  width: 55%;
+  height: 70vh;
   border: 1px solid #fff;
   border-radius: 10px;
-
   padding: 20px;
+  background-color: rgba(222, 222, 222, 0.5);
 }
 .overview {
   margin-bottom: 20px;
@@ -67,27 +74,26 @@ a {
 .temp {
   font-size: 64px;
 }
-.main-temp .active{
+.main-temp .active {
   color: #fff;
   cursor: default;
 }
-.main-temp .active:hover{
+.main-temp .active:hover {
   text-decoration: none;
 }
-.weather-forecast{
+.weather-forecast {
   margin-top: 40px;
   font-size: 16px;
 }
-.forecast-img{
+.forecast-img {
   width: 70px;
 }
 
-.forecast-card{
+.forecast-card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#forecast-min{
-  color: #dedede;
+#forecast-min {
+  color: #e8e7e7;
 }
-

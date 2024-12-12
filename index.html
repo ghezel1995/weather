@@ -14,59 +14,54 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="main">
-        <div class="weather-app">
-          <form id="search-form" class="mb-3">
-            <div class="row">
-              <div class="col-9">
-                <input
-                  id="city-input"
-                  type="search"
-                  placeholder="Search a city"
-                  class="form-control"
-                  autocomplete="off"
-                />
-              </div>
-              <div class="row col-3">
-                <input
-                  type="submit"
-                  value="Search"
-                  class="btn btn-primary w-100"
-                />
-                <!-- <input type="submit" value="Current" class="btn btn-success col-6" /> -->
-              </div>
+    <div class="main">
+      <div class="weather-app">
+        <form id="search-form" class="mb-3">
+          <div class="row">
+            <div class="col-9">
+              <input
+                id="city-input"
+                type="search"
+                placeholder="Search a city"
+                class="form-control"
+                autocomplete="off"
+              />
             </div>
-          </form>
-          <div class="overview">
-            <h1 id="city"></h1>
+            <div class="row col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="btn btn-primary w-100"
+              />
+            </div>
+          </div>
+        </form>
+        <div class="overview">
+          <h1 id="city"></h1>
+          <ul>
+            <li>Last updated: <span id="date"></span></li>
+            <li id="description"></li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-6 main-temp">
+            <img id="icon" class="w-25" src="" alt="" />
+            <span id="temperature" class="temp"></span>
+            <span class="celsius">°C</span>
+          </div>
+          <div class="col-6">
             <ul>
-              <li>Last updated: <span id="date"></span></li>
-              <li id="description"></li>
+              <li>Humidity: <span id="humidity"></span> %</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
             </ul>
           </div>
-          <div class="row">
-            <div class="col-6 main-temp">
-              <img id="icon" class="w-25" src="" alt="" />
-              <span id="temperature" class="temp"></span>
-              <span class="celsius"
-                >°C</span
-              >
-            </div>
-            <div class="col-6">
-              <ul>
-                <li>Humidity: <span id="humidity"></span> %</li>
-                <li>Wind: <span id="wind"></span> km/h</li>
-              </ul>
-            </div>
-          </div>
-          <div id="forecast" class="weather-forecast"></div>
         </div>
-        <small>
-          <a href="https://github.com/ghezel1995/weather">Open-source code</a>
-          by Mahsa Ghezel
-        </small>
+        <div id="forecast" class="weather-forecast"></div>
       </div>
+      <small>
+        <a href="https://github.com/ghezel1995/weather">Open-source code</a>
+        by Mahsa Ghezel
+      </small>
     </div>
     <script src="src/app.js"></script>
     <script

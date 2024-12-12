@@ -4,6 +4,8 @@
 
 This project is a simple yet effective weather application built with vanilla JavaScript. It allows users to check the current weather conditions of any city by fetching data from the SheCodes Weather API. The app utilizes Bootstrap for styling to ensure a responsive and user-friendly interface.
 
+![preview](./images/preview.png)
+
 ## Features
 
 - **Current Weather Data**: Get up-to-date weather information for any city.
